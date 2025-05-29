@@ -1,5 +1,7 @@
 # 📊 Public Domain Calculator
 
+*Part of the [Open Legal Tools](https://github.com/open-legal-tools) ecosystem*
+
 A free, modern public domain calculator for US copyright law. No Flash required - works on all devices and browsers.
 
 **🌐 Live Demo: [danielle-teagarden.github.io/public-domain-calculator](https://danielle-teagarden.github.io/public-domain-calculator/)**
