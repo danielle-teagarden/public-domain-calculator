@@ -295,6 +295,91 @@ th {
     font-weight: 600;
 }
 
+/* Legal Resources Section */
+.legal-resources {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+.legal-resources h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.legal-resources h3 {
+    color: var(--primary-dark);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.125rem;
+}
+
+.legal-citations ul,
+.official-resources ul,
+.educational-resources ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.legal-citations li,
+.official-resources li,
+.educational-resources li {
+    margin: 0.75rem 0;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.legal-citations li:last-child,
+.official-resources li:last-child,
+.educational-resources li:last-child {
+    border-bottom: none;
+}
+
+.legal-resources a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.legal-resources a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.accuracy-note {
+    background: #fffbeb;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--warning-color);
+    margin-top: 1.5rem;
+}
+
+.accuracy-note h3 {
+    color: #92400e;
+    margin-top: 0;
+}
+
+.accuracy-note p {
+    margin: 0.75rem 0;
+    color: #78350f;
+}
+
+.accuracy-note ul {
+    color: #78350f;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    margin: 0.75rem 0;
+}
+
+.accuracy-note li {
+    margin: 0.5rem 0;
+    padding: 0;
+    border-bottom: none;
+}
+
 /* Footer */
 footer {
     background-color: var(--bg-tertiary);
