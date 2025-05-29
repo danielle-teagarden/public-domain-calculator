@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Domain Calculator - Free US Copyright Term Calculator (No Flash Required)</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free public domain calculator for US copyright law. Modern, mobile-friendly alternative to Public Domain Sherpa. No Flash or plugins required. Calculate when works enter the public domain.">
+    <meta name="keywords" content="public domain calculator, copyright calculator, copyright term calculator, public domain sherpa alternative, US copyright law, when does copyright expire, copyright expiration calculator, flash-free copyright calculator">
+    <meta name="author" content="Danielle M. Teagarden">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Public Domain Calculator - Modern Copyright Term Calculator">
+    <meta property="og:description" content="Free, modern public domain calculator. No Flash required. Calculate when any work enters the public domain under US law.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danielle-teagarden.github.io/public-domain-calculator/">
+    <meta property="og:image" content="https://danielle-teagarden.github.io/public-domain-calculator/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Public Domain Calculator - No Flash Required">
+    <meta name="twitter:description" content="Modern, mobile-friendly public domain calculator for US copyright law. Free alternative to Flash-based calculators.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://danielle-teagarden.github.io/public-domain-calculator/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230284c7'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white'>📊</text></svg>">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Public Domain Calculator",
+        "description": "Free calculator to determine when works enter the public domain under US copyright law",
+        "url": "https://danielle-teagarden.github.io/public-domain-calculator/",
+        "applicationCategory": "Legal",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Danielle M. Teagarden"
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Public Domain Calculator</h1>
+            <p class="subtitle">Free US Copyright Term Calculator • No Flash Required</p>
+            <p class="tagline">A modern alternative to Public Domain Sherpa and other Flash-based calculators</p>
+        </header>
+
+        <main>
+            <div class="calculator-card">
+                <h2>When Does It Enter the Public Domain?</h2>
+                <p class="intro">Calculate when any work enters the public domain under US copyright law. This tool replaces outdated Flash-based calculators with a modern, mobile-friendly interface.</p>
+                
+                <form id="calculatorForm">
+                    <div class="form-group">
+                        <label for="workType">
+                            <span class="label-text">Type of Work</span>
+                            <span class="required">*</span>
+                        </label>
+                        <select id="workType" required>
+                            <option value="">Select type...</option>
+                            <option value="published">Published Work</option>
+                            <option value="unpublished">Unpublished Work</option>
+                            <option value="sound">Sound Recording</option>
+                            <option value="foreign">Foreign Work</option>
+                        </select>
+                    </div>
+
+                    <div id="publishedOptions" class="conditional-section" style="display: none;">
+                        <h3>Published Work Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="pubYear">
+                                <span class="label-text">Year of First Publication</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" id="pubYear" min="1790" max="2025" placeholder="e.g., 1925">
+                            <small class="help-text">Enter the year the work was first published</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pubLocation">
+                                <span class="label-text">First Published in the United States?</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select id="pubLocation">
+                                <option value="us">Yes, in the US</option>
+                                <option value="foreign">No, outside the US</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="copyright">
+                                <span class="label-text">Did it have a copyright notice when published?</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select id="copyright">
+                                <option value="yes">Yes (© or Copyright)</option>
+                                <option value="no">No notice</option>
+                                <option value="unknown">Unknown/Not sure</option>
+                            </select>
+                            <small class="help-text">Required for works published before 1989</small>
+                        </div>
+                        
+                        <div class="form-group" id="renewalGroup" style="display: none;">
+                            <label for="renewed">
+                                <span class="label-text">Was the copyright renewed?</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select id="renewed">
+                                <option value="na">Not Applicable</option>
+                                <option value="yes">Yes, renewed</option>
+                                <option value="no">No, not renewed</option>
+                                <option value="unknown">Unknown</option>
+                            </select>
+                            <small class="help-text">Required for works published 1923-1963</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="authorType">
+                                <span class="label-text">Type of Author</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select id="authorType">
+                                <option value="individual">Individual Author(s)</option>
+                                <option value="corporate">Corporate/Work for Hire</option>
+                                <option value="anonymous">Anonymous/Pseudonymous</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="unpublishedOptions" class="conditional-section" style="display: none;">
+                        <h3>Unpublished Work Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="creationYear">
+                                <span class="label-text">Year Created</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" id="creationYear" min="1700" max="2025" placeholder="e.g., 1900">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="authorDeath">
+                                <span class="label-text">Year of Author's Death</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" id="authorDeath" min="1700" max="2025" placeholder="e.g., 1950">
+                            <small class="help-text">Leave blank if author is still living</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="unpubCorporate">
+                                <span class="label-text">Corporate Authorship?</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select id="unpubCorporate">
+                                <option value="no">No, individual author</option>
+                                <option value="yes">Yes, corporate/work for hire</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="soundOptions" class="conditional-section" style="display: none;">
+                        <h3>Sound Recording Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="soundYear">
+                                <span class="label-text">Year of Recording</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" id="soundYear" min="1877" max="2025" placeholder="e.g., 1920">
+                            <small class="help-text">When was the recording first fixed?</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="soundPublished">
+                                <span class="label-text">Was it published?</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select id="soundPublished">
+                                <option value="yes">Yes, published</option>
+                                <option value="no">No, unpublished</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="foreignOptions" class="conditional-section" style="display: none;">
+                        <h3>Foreign Work Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="foreignYear">
+                                <span class="label-text">Year of First Publication</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" id="foreignYear" min="1790" max="2025" placeholder="e.g., 1925">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="foreignCountry">
+                                <span class="label-text">Country of First Publication</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" id="foreignCountry" placeholder="e.g., United Kingdom">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="calculate-btn">Calculate Public Domain Status</button>
+                </form>
+
+                <div id="result" class="result-section" style="display: none;">
+                    <h3>Results</h3>
+                    <div id="resultContent"></div>
+                </div>
+            </div>
+
+            <section class="info-section">
+                <h2>About This Calculator</h2>
+                <p>This free public domain calculator helps you determine when creative works lose copyright protection and enter the public domain under US law. It's a modern, mobile-friendly alternative to Flash-based calculators like Public Domain Sherpa.</p>
+                
+                <div class="features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>✅ <strong>No Flash Required</strong> - Works on all modern browsers and devices</li>
+                        <li>📱 <strong>Mobile Friendly</strong> - Responsive design for phones and tablets</li>
+                        <li>🔄 <strong>Always Updated</strong> - Reflects current copyright law changes</li>
+                        <li>🎯 <strong>Accurate Results</strong> - Based on Cornell's authoritative copyright chart</li>
+                        <li>🔒 <strong>Privacy First</strong> - No data collection or tracking</li>
+                        <li>💻 <strong>Open Source</strong> - Free to use, modify, and embed</li>
+                    </ul>
+                </div>
+
+                <div class="comparison">
+                    <h3>Why Use This Instead of Public Domain Sherpa?</h3>
+                    <p>Adobe Flash was discontinued in 2020, making many copyright calculators unusable. This calculator provides the same functionality with modern web technologies:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>This Calculator</th>
+                                <th>Flash-Based Calculators</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mobile Support</td>
+                                <td class="yes">✅ Full support</td>
+                                <td class="no">❌ No support</td>
+                            </tr>
+                            <tr>
+                                <td>Plugin Required</td>
+                                <td class="yes">✅ None</td>
+                                <td class="no">❌ Flash Player</td>
+                            </tr>
+                            <tr>
+                                <td>Security</td>
+                                <td class="yes">✅ Secure</td>
+                                <td class="no">❌ Flash vulnerabilities</td>
+                            </tr>
+                            <tr>
+                                <td>Accessibility</td>
+                                <td class="yes">✅ WCAG compliant</td>
+                                <td class="no">❌ Limited</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Created by <a href="https://github.com/danielle-teagarden" target="_blank" rel="noopener">Danielle M. Teagarden</a> | 
+               <a href="https://github.com/danielle-teagarden/public-domain-calculator" target="_blank" rel="noopener">View on GitHub</a> | 
+               <a href="https://danielle-teagarden.github.io/copyright-law-lecture/" target="_blank" rel="noopener">Copyright Law Resources</a>
+            </p>
+            <p class="disclaimer">This calculator provides general guidance based on US copyright law. For legal advice, consult a copyright attorney.</p>
+        </footer>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
