@@ -1,0 +1,19 @@
+{
+  "devcontainer": {
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+      "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-vscode.vscode-json",
+          "esbenp.prettier-vscode",
+          "bradlc.vscode-tailwindcss"
+        ]
+      }
+    },
+    "forwardPorts": [3000, 8000],
+    "postCreateCommand": "npm install -g live-server"
+  }
+}
